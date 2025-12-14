@@ -1,13 +1,13 @@
 import mysql.connector
 
-def create_connection(host_name, user_name, user_password, db_name):
+def create_connection(host_name, user_name, user_password):
     """Create alx_book_store databse if not exists and return the connection object."""
     conn = None
     try:
         conn = mysql.connector.connect(
-                host="localhost",
-                user="root",
-                password="emmyprime55@mysqldb"
+                host=host_name,
+                user=user_name,
+                password=user_password,
         )
 
         if conn.is_connected():
@@ -31,5 +31,5 @@ def create_connection(host_name, user_name, user_password, db_name):
             print("MySQL connection closed.")
 
 
-if__name__=="__main__":
-    create_database()
+if __name__== "__main__":
+    create_connection("localhost", "root", "emmyprime55@mysqldb")
