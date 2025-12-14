@@ -14,7 +14,7 @@ CREATE TABLE Books (
 	author_id INT,
 	price DOUBLE,
 	publicaation_date DATE,
-	FOREIGH KEY (author_id) REFERENCES Authors(author_id)
+	FOREIGN KEY (author_id) REFERENCES Authors(author_id)
 );
 
 --Create Customers table (No dependencies)
@@ -35,7 +35,7 @@ CREATE TABLE Orders (
 
 --Create Order Details table (This will depends on the Order and Books table)
 CREATE TABLE Order_Details (
-	order_detailid INT PRIMARY,
+        order_detailid INT PRIMARY KEY,
 	order_id INT,
 	book_id INT,
 	quantity DOUBLE,
