@@ -30,7 +30,7 @@ CREATE TABLE Orders (
 	order_id INT PRIMARY KEY,
 	customer_id INT,
 	order_date DATE,
-	FOREIGN KEY (customer_id) REFERENCE Customers(customer_id)
+	FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
 --Create Order Details table (This will depends on the Order and Books table)
