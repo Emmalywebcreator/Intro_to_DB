@@ -1,5 +1,4 @@
 import mysql.connector
-from mysql.connector import Error
 
 def create_connection(host_name, user_name, user_password, db_name):
     """Create alx_book_store databse if not exists and return the connection object."""
@@ -21,7 +20,7 @@ def create_connection(host_name, user_name, user_password, db_name):
 
             cursor.close()
 
-    except Error as e:
+    except mysql.connector.Error as e:
         # Handles connection errors
         print(f"Error connecting to MYSQL: {e}")
 
