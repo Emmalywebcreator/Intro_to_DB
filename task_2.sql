@@ -1,13 +1,12 @@
-CREATE DATABASE IF NOT EXISTS alx_book_store;
 USE alx_book_store;
 
---Create Authors table first
+-- Create Authors table first
 CREATE TABLE Authors (
 	author_id INT PRIMARY KEY,
 	author_name VARCHAR(225)
 );
 
---Create Books tables (Depends on Authors)
+-- Create Books tables (Depends on Authors)
 CREATE TABLE Books (
 	book_id INT PRIMARY KEY,
 	title VARCHAR(130),
@@ -17,7 +16,7 @@ CREATE TABLE Books (
 	FOREIGN KEY (author_id) REFERENCES Authors(author_id)
 );
 
---Create Customers table (No dependencies)
+-- Create Customers table (No dependencies)
 CREATE TABLE Customers (
 	customer_id INT PRIMARY KEY,
 	customer_name VARCHAR(215),
@@ -25,7 +24,7 @@ CREATE TABLE Customers (
 	address TEXT
 );
 
---Create Orders table (depends on Customers table)
+-- Create Orders table (depends on Customers table)
 CREATE TABLE Orders (
 	order_id INT PRIMARY KEY,
 	customer_id INT,
@@ -33,7 +32,7 @@ CREATE TABLE Orders (
 	FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
---Create Order Details table (This will depends on the Order and Books table)
+-- Create Order Details table (This will depends on the Order and Books table)
 CREATE TABLE Order_Details (
         order_detailid INT PRIMARY KEY,
 	order_id INT,
