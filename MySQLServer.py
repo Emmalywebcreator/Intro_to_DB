@@ -5,7 +5,7 @@ def create_connection(host_name, user_name, user_password, db_name):
     """Create alx_book_store databse if not exists and return the connection object."""
     conn = None
     try:
-        conn = my.connector.connect(
+        conn = mysql.connector.connect(
                 host="localhost",
                 user="root",
                 password="emmyprime55@mysqldb"
